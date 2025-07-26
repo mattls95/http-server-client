@@ -7,4 +7,4 @@ def init():
     PORT = os.environ.get("PORT")
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))
-    receive_new_clients(server)
+    receive_new_clients(server, HOST, PORT)

@@ -1,8 +1,4 @@
-import socket
 import threading
-
-HOST = "127.0.0.1"  # Standard loopback interface address (localhost)
-PORT = 1024  # Port to listen on (non-privileged ports are > 1023)
 
 clients = []
 usernames =[]
@@ -32,7 +28,7 @@ def remove_client(client):
     send_message(f"{username} has left the chat")
     usernames.remove(username)
 
-def receive_new_clients(server):
+def receive_new_clients(server, HOST, PORT):
     server.listen()
     print(f"Server running on{HOST}:{PORT}")
 
